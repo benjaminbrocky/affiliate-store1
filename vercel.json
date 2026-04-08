@@ -1,0 +1,15 @@
+{
+  "installCommand": "composer install --no-dev --optimize-autoloader",
+  "builds": [
+    {
+      "src": "*.php",
+      "use": "@vercel/php"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.php"
+    }
+  ]
+}
