@@ -1,18 +1,14 @@
 {
-  "functions": {
-    "api/*.php": {
-      "runtime": "vercel-php@0.7.2"
+  "builds": [
+    {
+      "src": "*.php",
+      "use": "@vercel/php"
     }
-  },
+  ],
   "routes": [
-    { "src": "/admin", "dest": "/api/admin.php" },
-    { "src": "/blog/([^/]+)", "dest": "/api/blog-post.php?slug=$1" },
-    { "src": "/blog", "dest": "/api/blog.php" },
-    { "src": "/category/([^/]+)", "dest": "/api/category.php?slug=$1" },
-    { "src": "/subcategory/([^/]+)", "dest": "/api/subcategory.php?slug=$1" },
-    { "src": "/product/([^/]+)", "dest": "/api/product.php?slug=$1" },
-    { "src": "/products", "dest": "/api/products.php" },
-    { "src": "/search", "dest": "/api/search.php" },
-    { "src": "/(.*)", "dest": "/api/index.php" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.php"
+    }
   ]
 }
